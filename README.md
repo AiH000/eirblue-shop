@@ -1,6 +1,6 @@
 # eirblue-shop
 
-Link PWS: http://aisyah-hastomo-eirblue.pbp.cs.ui.ac.id/
+Link PWS: http://aisyah-hastomo-shopeirblue.pbp.cs.ui.ac.id/
 
 1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
     - Membuat projek Django baru
