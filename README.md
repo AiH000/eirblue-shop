@@ -89,4 +89,12 @@ Karena developer dapat berinteraksi dengan basis data relasional dengan python t
     - Membuat routing URL untuk masing-masing views yang telah ditambahkan pada poin 2.
         - Import keempat fungsi ke dalam urls.py pada direktori main
         - Tambahkan path url setiap fungsi pada urlpatterns
+     
+![show_xml](https://github.com/user-attachments/assets/b963c1ec-8b41-42a3-a61e-8c1375a03a7b)
+![show_json](https://github.com/user-attachments/assets/47c3b24f-1c9a-45a8-aa05-d5a91ebb22a0)
+![show_xml_by_id](https://github.com/user-attachments/assets/981e3282-1a05-44ac-986f-618a78b3acfa)
+![show_json_by_id](https://github.com/user-attachments/assets/13144117-5985-494e-a444-bcea5626ef85)
+
+
+
 
