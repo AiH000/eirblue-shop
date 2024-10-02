@@ -154,3 +154,43 @@ Cookies juga dapat menyimpan informasi terkait user selain session ID. Cookies j
         - Menambahkan kalimat Sesi login terakhir pada main.html, set cookie last_login setiap login dan menghapusnya setiap logout
 
 
+#############################################################################################################################################
+TUGAS 5
+
+1. Jika terdapat beberapa CSS selector untuk suatu elemen HTML, jelaskan urutan prioritas pengambilan CSS selector tersebut!
+    1) Inline style
+    2) External dan internal style sheets
+    3) Browser default
+
+2. Mengapa responsive design menjadi konsep yang penting dalam pengembangan aplikasi web? Berikan contoh aplikasi yang sudah dan belum menerapkan responsive design!
+Agar aplikasi web tampil optimal pada device mana pun, baik yang layar kecil maupun besar, dan meningkatkan user experience. Contoh aplikasi yang sudah menerapkan responsive design adalah Youtube dan yang belum adalah gbf.wiki  
+
+3. Jelaskan perbedaan antara margin, border, dan padding, serta cara untuk mengimplementasikan ketiga hal tersebut!
+Margin memengaruhi ruang di sekitar elemen, border adalah garis tepi dari elemen, sedangkan padding memengaruhi ruang di dalam elemen. Ketiga hal tersebut dapat diimplementasi pada bagian class dengan margin: m, border: border, padding: p.
+
+4. Jelaskan konsep flex box dan grid layout beserta kegunaannya!
+Flexbox adalah module yang terbagi menjadi container dan itemnya yang bekerja sebagai mode pengaturan atau konsep layout. Flexbox digunakan untuk menyusun item dalam satu dimensi (row atau column). Grid adalah CSS yang dapat membagi kolom pada website baik secara horizontal dan vertikal. Grid digunakan untuk menyusun item dalam dua dimensional.
+
+5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial)!
+    - Implementasikan fungsi untuk menghapus dan mengedit product.
+        - Membuat fungsi edit_product dan delete_product di views.py. edit_product menerima parameter id dan menampilkan form. delete_product menerima parameter id dan menghapus product.
+        - Import kedua fungsi pada urls.py dan tambahkan path.
+        - Buat template edit_product.html.
+        - Implementasikan fungsi pada main.html
+    - Kustomisasi desain pada template HTML yang telah dibuat pada tugas-tugas sebelumnya menggunakan CSS atau CSS framework (seperti Bootstrap, Tailwind, Bulma) dengan ketentuan sebagai berikut:
+        - Kustomisasi halaman login, register, dan tambah product semenarik mungkin.
+        - Kustomisasi halaman daftar product menjadi lebih menarik dan responsive. Kemudian, perhatikan kondisi berikut:
+            - Jika pada aplikasi belum ada product yang tersimpan, halaman daftar product akan menampilkan gambar dan pesan bahwa belum ada product yang terdaftar.
+            - Jika sudah ada product yang tersimpan, halaman daftar product akan menampilkan detail setiap product dengan menggunakan card (tidak boleh sama persis dengan desain pada Tutorial!).
+        - Untuk setiap card product, buatlah dua buah button untuk mengedit dan menghapus product pada card tersebut!
+        - Buatlah navigation bar (navbar) untuk fitur-fitur pada aplikasi yang responsive terhadap perbedaan ukuran device, khususnya mobile dan desktop.
+            - Tambahkan script tailwind pada base.html
+            - Buat global.css pada static/css
+            - Tambahkan file global.css pada base.html
+            - Buat aturan untuk class yang dibutuhkan pada global.css
+            - Buat card_info.html untuk npm, nama, dan kelas serta card_product.html sebagai template untuk product jika sudah ada yang terdaftar.
+            - Buat navbar.html di folder template pada root folder sebagai template untuk navigation bar.
+            - Buat div dan edit pada class warna, font, text, bentuk, margin, padding, border, transition, dan lainnya.
+            - Tambahkan folder image pada static dan tambahkan image sad.png untuk dipakai di main.html saat belum ada product, halaman akan menampilkan bahwa belum ada product yang terdaftar
+            - Masukkan navbar.html ke create_product.html, edit_product.html, dan main.html
+            - Implementasikan setiap template di main ke dalam main.html
