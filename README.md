@@ -194,3 +194,41 @@ Flexbox adalah module yang terbagi menjadi container dan itemnya yang bekerja se
             - Tambahkan folder image pada static dan tambahkan image sad.png untuk dipakai di main.html saat belum ada product, halaman akan menampilkan bahwa belum ada product yang terdaftar
             - Masukkan navbar.html ke create_product.html, edit_product.html, dan main.html
             - Implementasikan setiap template di main ke dalam main.html
+
+#############################################################################################################################################
+TUGAS 6
+
+1. Jelaskan manfaat dari penggunaan JavaScript dalam pengembangan aplikasi web!
+    Agar manipulasi halaman web dapat dilakukan secara dinamis dan interaksi antara halaman web dengan pengguna dapat meningkat karena JavaScript mendukung konsep pemrograman berbasis obyek, pemrograman imperatif, dan pemrograman fungsional.
+
+2. Jelaskan fungsi dari penggunaan await ketika kita menggunakan fetch()! Apa yang akan terjadi jika kita tidak menggunakan await?
+    Fungsi await digunakan untuk menunggu hasil dari fungsi async. Fungsi await akan membuat function menghentikan eksekusinya dan menunggu resolved promise sebelum lanjut.
+    Fungsi await hanya bisa digunakan di function async dan jika tidak digunakan pada suatu value, function tidak akan menghentikan eksekusinya dan menunggu value diambil sebelum lanjut.
+
+3. Mengapa kita perlu menggunakan decorator csrf_exempt pada view yang akan digunakan untuk AJAX POST?
+    Decorator csrf_exempt membuat Django tidak perlu mengecek keberadaan csrf_token pada POST request yang dikirimkan ke fungsi pada view. Cek csrf token tidak esensial saat sudah login.
+
+4. Pada tutorial PBP minggu ini, pembersihan data input pengguna dilakukan di belakang (backend) juga. Mengapa hal tersebut tidak dilakukan di frontend saja?
+    Untuk mencegah terjadinya celah keamanan Cross Site Scripting atau XSS.
+
+5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial)!
+     AJAX GET
+        - Ubahlah kode cards data mood agar dapat mendukung AJAX GET.
+            Hapus bagian block conditional pada main.html
+            Tambahkan div kosong dengan id=product_cards
+         -Lakukan pengambilan data mood menggunakan AJAX GET. Pastikan bahwa data yang diambil hanyalah data milik pengguna yang logged-in.
+            Pada function show_json, ubah menjadi data yang didapat dari filter Product berdasarkan user logged-in.
+            Pada script di main.html, buat async function getProducts yang akan fetch API ke data JSON dan selanjutnya melakukan parse pada data JSON menjadi objek JavaScript.
+    AJAX POST
+        - Buatlah sebuah tombol yang membuka sebuah modal dengan form untuk menambahkan mood.
+            Menambahkan tombol dengan data-modal-target="crudModal", data-modal-toggle="crudModal", dan onclick="showModal() pada main.html.
+        - Buatlah fungsi view baru untuk menambahkan mood baru ke dalam basis data.
+            Buat fungsi add_product_ajax pada views.py yang menerima parameter request dan get product data field lalu membuat new_product
+        - Buatlah path /create-ajax/ yang mengarah ke fungsi view yang baru kamu buat.
+            Impor fungsi add_product_ajax pada urls.py dan tambahkan path url untuk mengakses fungsi tersebut
+        - Hubungkan form yang telah kamu buat di dalam modal kamu ke path /create-ajax/.
+            Buat function addProduct pada script di main html yang akan fetch create-ajax dan membuat FormData baru yang datanya diambil dari form pada modal.
+        - Lakukan refresh pada halaman utama secara asinkronus untuk menampilkan daftar mood terbaru tanpa reload halaman utama secara keseluruhan.
+            Buat async function refreshProduct
+            Buat const products yang await dari fungsi getProduct
+            Pada function addProduct panggil refreshProduct setelahnya
